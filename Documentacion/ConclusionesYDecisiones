@@ -1,0 +1,30 @@
+Comentarios Sobre el Informe Lighouse, que etá disponible en el archivo pdf de esta misma carpeta:
+
+La herramienta Lighthouse de Google Chrome confirma que la aplicación cumple con los requisitos de una Progressive Web App (PWA).
+En el análisis realizado se obtuvieron los siguientes resultados:
+
+ Se detecta un manifest.webmanifest válido con nombre, íconos e información básica.
+
+El Service Worker está correctamente registrado y controla la navegación.
+
+La aplicación puede instalarse desde el navegador.
+
+Funciona correctamente en modo offline gracias a los recursos cacheados.
+
+La app es rápida, ligera y cumple con los criterios esenciales para PWA.
+
+Puntuación obtenida en la auditoría PWA: 100/100.
+
+
+
+Comentarios Y Decisiones sobre el Service Worker:
+
+Se personalizó el archivo ngsw-config.json para implementar una estrategia de caché eficaz que permita el funcionamiento offline y una mejor experiencia de usuario:
+
+Se definió un dataGroup llamado "pokeapi" que cachea las respuestas de la API REST (https://pokeapi.co/api/v2/pokemon?*) con una política "performance" durante 6 horas.
+
+Se añadió un segundo grupo "pokemon-images" que guarda los sprites de los Pokémon desde GitHub, con un tiempo de vida de 24 horas.
+
+La estrategia utilizada permite que la app responda rápidamente usando caché, mientras mantiene actualizados los datos con solicitudes nuevas cada cierto tiempo.
+
+Esta configuración mejora el rendimiento y garantiza el acceso offline de los contenidos esenciales.
